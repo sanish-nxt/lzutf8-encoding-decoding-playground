@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.playground {
+  margin-top: 2rem;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+textarea {
+  min-height: 10rem;
+  height: 60vh;
+  min-width: 5rem;
+  width: 40%;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.action-buttons button {
+  padding: 0.5rem;
+  color: black;
+  background-color: aliceblue;
+  border: solid 1px gray;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-buttons button:active {
+  background-color: rgb(125, 183, 235);
+}
+
+.error {
+  text-align: left;
+  color: rgb(150, 6, 6);
+  border: solid 1px rgb(172, 55, 55);
+  background-color: rgb(238, 172, 172);
+  padding: 0.75rem;
+  border-radius: 4px;
+}
