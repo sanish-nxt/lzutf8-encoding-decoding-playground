@@ -10,7 +10,7 @@ export const App: FC<{ name: string }> = ({ name }) => {
   const onEncode = () => {
     setErrorMsg('')
     try{
-      const compressedStr = LZUTF8.compress(JSON.stringify(decodedStr), {
+      const compressedStr = LZUTF8.compress((JSON.stringify(JSON.parse(decodedStr))), {
         outputEncoding: 'Base64',
       })
       SetEncodedStr(compressedStr)
@@ -25,7 +25,7 @@ export const App: FC<{ name: string }> = ({ name }) => {
       const decompressedStr = LZUTF8.decompress(encodedStr, {
         inputEncoding: 'Base64',
       })
-      SetDecodedStr(decompressedStr.toString())
+      SetDecodedStr(JSON.stringify(JSON.parse(decompressedStr), undefined, 4))
     }catch(e){
       console.error(e)
       setErrorMsg(`Decoding Error: ${e.message}`)
